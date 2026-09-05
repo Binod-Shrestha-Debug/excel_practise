@@ -1,0 +1,11 @@
+x=int(2.5)
+print(x)
+print(id(x))
+print(type(x))
+
+y=float(1)
+z=float("3.55")
+print(y)
+print(type(y))
+print(z)
+print(type(z))
