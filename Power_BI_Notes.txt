@@ -1,0 +1,308 @@
+# POWER BI – INTRODUCTION
+
+## 1. What is Power BI?
+
+Power BI is a Business Intelligence (BI) and data visualization tool developed by Microsoft.
+
+It helps users collect data from different sources, clean and transform data, analyze information, and create interactive reports and dashboards.
+
+In simple words, Power BI converts raw data into meaningful information that helps people understand their business and make better decisions.
+
+## 2. Why is Power BI Necessary?
+
+Nowadays, organizations collect large amounts of data from customers, employees, sales, products, and other activities.
+
+Understanding this data manually can be difficult and time-consuming.
+
+Power BI makes this process easier by allowing users to:
+
+- Analyze large amounts of data.
+- Create attractive charts and graphs.
+- Understand business performance.
+- Identify trends and patterns.
+- Compare sales, expenses, and profits.
+- Create interactive reports.
+- Make better business decisions.
+- Share reports with other people.
+
+## 3. Main Uses of Power BI
+
+Power BI is commonly used in different business areas.
+
+1. **Sales Analysis:** Analyze sales, revenue, profit, and product performance.
+2. **Financial Analysis:** Monitor income, expenses, and budgets.
+3. **Human Resources:** Analyze employee information and attendance.
+4. **Marketing:** Understand customer behavior and campaign performance.
+5. **Education:** Analyze student results, attendance, and academic performance.
+6. **Healthcare:** Analyze hospital operations and administrative information.
+
+## 4. Main Components of Power BI
+
+Power BI has several important components.
+
+### A. Power BI Desktop
+
+Power BI Desktop is a Windows application used to connect to data, transform information, create data models, and build reports.
+
+It is mainly used for developing reports.
+
+### B. Power BI Service
+
+Power BI Service is an online platform used to publish, share, manage, and access Power BI reports and dashboards.
+
+### C. Power BI Mobile
+
+Power BI Mobile is an application that allows users to view and interact with reports and dashboards using mobile devices.
+
+### D. Power BI Report Server
+
+Power BI Report Server allows organizations to host and manage reports on their own servers.
+
+## 5. Power BI File Extension
+
+The main Power BI Desktop file extension is:
+
+**.pbix**
+
+A PBIX file stores a Power BI report along with its data model and other report-related information.
+
+Another file extension is:
+
+**.pbit**
+
+A PBIT file is a Power BI template. It stores report structure and design without including the imported data itself.
+
+## 6. Power BI Interface
+
+When we open Power BI Desktop, we see several important sections.
+
+### A. Ribbon
+
+The ribbon is located at the top of Power BI Desktop.
+
+It contains different tabs and commands such as:
+
+- Home
+- Insert
+- Modeling
+- View
+- Optimize
+- Help
+
+### B. Report View
+
+Report View is used to create reports using charts, tables, cards, maps, and other visualizations.
+
+### C. Table View
+
+Table View displays the data inside tables. It helps users inspect rows, columns, and data types.
+
+### D. Model View
+
+Model View displays relationships between different tables.
+
+It helps users understand how tables are connected.
+
+### E. Data Pane
+
+The Data pane displays available tables, columns, and measures in the data model.
+
+### F. Visualizations Pane
+
+The Visualizations pane contains different charts and visual elements used to represent data.
+
+### G. Filters Pane
+
+The Filters pane allows users to filter data based on selected conditions.
+
+## 7. Data Sources in Power BI
+
+Power BI can connect to different types of data sources.
+
+Examples include:
+
+- Microsoft Excel
+- CSV files
+- Text files
+- SQL Server
+- PostgreSQL
+- MySQL
+- Web data
+- SharePoint
+- Microsoft Access
+
+Power BI allows users to combine information from different sources for analysis.
+
+## 8. What is Data Visualization?
+
+Data visualization means presenting information through visual elements such as charts, graphs, maps, and tables.
+
+It helps users understand complex information more easily.
+
+Examples:
+
+- Bar Chart – Compare different categories.
+- Pie Chart – Show proportions.
+- Line Chart – Display trends over time.
+- Card – Display an important number.
+- Table – Display detailed information.
+- Map – Display geographical information.
+- Slicer – Allow users to interactively filter reports.
+
+## 9. What is Power Query?
+
+Power Query is a data connection and transformation tool available in Power BI.
+
+It is used to prepare data before loading it into the data model.
+
+Common Power Query operations include:
+
+- Removing unnecessary columns.
+- Removing duplicate records.
+- Handling missing values.
+- Changing data types.
+- Renaming columns.
+- Splitting columns.
+- Merging queries.
+- Appending queries.
+- Filtering rows.
+
+Power Query helps make data clean, organized, and ready for analysis.
+
+## 10. What is DAX?
+
+DAX stands for Data Analysis Expressions.
+
+It is a formula language used in Power BI to create calculated columns, measures, and calculated tables.
+
+Examples of DAX functions:
+
+- SUM()
+- AVERAGE()
+- COUNT()
+- COUNTROWS()
+- MIN()
+- MAX()
+- IF()
+- CALCULATE()
+- DISTINCTCOUNT()
+
+Example:
+
+Total Sales = SUM(Sales[Amount])
+
+This formula calculates the total amount from the Amount column in the Sales table.
+
+## 11. What is a Dashboard?
+
+A dashboard is a single-page visual summary of important information.
+
+It helps users monitor business performance using charts, cards, graphs, and other visuals.
+
+For example, a sales dashboard may display:
+
+- Total Sales
+- Total Profit
+- Number of Customers
+- Best-Selling Products
+- Monthly Sales Trends
+
+In Power BI, dashboards are created in Power BI Service.
+
+## 12. What is a Report?
+
+A Power BI report is a collection of one or more pages containing visualizations based on a data model.
+
+Reports allow users to explore data using filters, slicers, and interactive visuals.
+
+### Difference Between Report and Dashboard
+
+| Report | Dashboard |
+|---|---|
+| Can contain multiple pages. | A single-page canvas. |
+| Created in Power BI Desktop or Service. | Created in Power BI Service. |
+| Supports detailed data exploration. | Provides a high-level overview. |
+| Contains interactive visualizations. | Displays pinned tiles and visuals. |
+
+## 13. What is Data Modeling?
+
+Data modeling is the process of organizing tables and establishing relationships between them.
+
+For example:
+
+A Sales table may contain CustomerID, ProductID, and SalesAmount.
+
+A Customers table may contain CustomerID and CustomerName.
+
+By creating relationships between these tables, Power BI can analyze sales information based on customers.
+
+## 14. What is a Slicer?
+
+A slicer is a visual filter that allows users to interactively filter data in a report.
+
+For example, a sales report can have a Year slicer.
+
+When a user selects 2026, the report visuals can display information for that year.
+
+## 15. Advantages of Power BI
+
+- Easy-to-understand visual reports.
+- Connects to multiple data sources.
+- Supports interactive dashboards.
+- Helps analyze large datasets.
+- Integrates with Microsoft products.
+- Saves time in reporting.
+- Supports data-driven decisions.
+- Offers sharing and collaboration features.
+
+## 16. Limitations of Power BI
+
+- Some advanced features require technical knowledge.
+- Large datasets can require performance optimization.
+- Some sharing and collaboration features require paid licenses.
+- Complex data models can be difficult to maintain.
+- Internet access is needed for many cloud-based features.
+
+## 17. Power BI Workflow
+
+A typical Power BI project follows these steps:
+
+1. Collect data from different sources.
+2. Import data into Power BI.
+3. Clean and transform data using Power Query.
+4. Create relationships between tables.
+5. Perform calculations using DAX.
+6. Create charts and visualizations.
+7. Design an interactive report.
+8. Publish and share the report.
+
+## 18. Power BI vs Excel
+
+| Excel | Power BI |
+|---|---|
+| Mainly used for spreadsheets and calculations. | Mainly used for business intelligence and data visualization. |
+| Uses formulas and functions. | Uses DAX and Power Query. |
+| Creates charts and PivotTables. | Creates interactive reports and dashboards. |
+| Suitable for spreadsheet-based analysis. | Suitable for interactive reporting and data modeling. |
+| Uses XLSX as its main workbook format. | Uses PBIX as its main Desktop report format. |
+
+## 19. Career Opportunities Using Power BI
+
+Learning Power BI can help develop skills for several career paths.
+
+- Data Analyst
+- Business Intelligence Analyst
+- Reporting Analyst
+- Business Analyst
+- Power BI Developer
+- Data Visualization Specialist
+
+## 20. Conclusion
+
+Power BI is a useful tool for transforming raw data into meaningful information.
+
+It combines data preparation, data modeling, calculations, and visualization in one platform.
+
+Learning Power BI is valuable for students, business professionals, and people interested in data analytics and business intelligence.
+
+**Remember:** Power BI helps us understand data, discover insights, and make better decisions.
