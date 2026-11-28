@@ -1,0 +1,397 @@
+MICROSOFT EXCEL FORMULAS — COMPLETE PRACTICAL NOTES
+====================================================
+
+Purpose
+-------
+This file is a practical reference to commonly used Microsoft Excel formulas,
+with syntax, examples, and short explanations. Examples use comma separators.
+Depending on your regional settings, Excel may require semicolons instead.
+
+Before you start
+----------------
+1. Every formula begins with an equals sign (=).
+2. A cell reference such as A2 means column A, row 2.
+3. A range such as A2:A10 means cells A2 through A10.
+4. Text values are written inside double quotation marks: "Pass".
+5. Use $ to lock a reference: $A$2.
+6. Press Enter to calculate a formula.
+7. Excel 365 includes newer functions such as XLOOKUP, FILTER, SORT and UNIQUE.
+
+SAMPLE DATA USED IN EXAMPLES
+----------------------------
+A2:A6 = 65, 78, 42, 90, 55
+B2:B6 = Ram, Sita, Hari, Mina, Gita
+C2:C6 = Sales, IT, Sales, HR, IT
+D2:D6 = 1000, 1500, 800, 2000, 1200
+
+1. BASIC MATHEMATICAL FORMULAS
+------------------------------
+=SUM(A2:A10)                 Adds values.
+=AVERAGE(A2:A10)             Calculates the average.
+=MIN(A2:A10)                 Returns the smallest value.
+=MAX(A2:A10)                 Returns the largest value.
+=COUNT(A2:A10)               Counts cells containing numbers.
+=COUNTA(A2:A10)              Counts non-empty cells.
+=COUNTBLANK(A2:A10)          Counts empty cells.
+=PRODUCT(A2:A5)              Multiplies values.
+=ABS(A2)                     Returns the positive magnitude.
+=ROUND(A2,2)                 Rounds to 2 decimal places.
+=ROUNDUP(A2,0)               Rounds away from zero.
+=ROUNDDOWN(A2,0)             Rounds toward zero.
+=INT(A2)                     Rounds down to an integer.
+=MOD(A2,2)                   Returns the remainder after division.
+=QUOTIENT(A2,3)              Returns the integer portion of division.
+=POWER(A2,2)                 Raises a number to a power.
+=SQRT(A2)                    Returns the square root.
+=SUBTOTAL(9,A2:A10)           Adds a range and can ignore filtered-out rows.
+=AGGREGATE(9,5,A2:A10)        Performs an aggregate calculation with options.
+
+2. BASIC OPERATORS
+------------------
+=A2+B2                       Addition.
+=A2-B2                       Subtraction.
+=A2*B2                       Multiplication.
+=A2/B2                       Division.
+=A2^2                        Exponent.
+=(A2+B2)*C2                  Brackets control calculation order.
+=A2&" "&B2                   Joins text values.
+
+3. LOGICAL FORMULAS
+-------------------
+=IF(A2>=40,"Pass","Fail")
+Returns Pass if A2 is at least 40; otherwise Fail.
+
+=IFS(A2>=80,"A",A2>=70,"B",A2>=60,"C",A2>=40,"D",TRUE,"Fail")
+Checks multiple conditions in order.
+
+=AND(A2>=40,B2>=40)
+TRUE only when both conditions are true.
+
+=OR(A2>=40,B2>=40)
+TRUE when at least one condition is true.
+
+=NOT(A2>50)
+Reverses TRUE/FALSE.
+
+=IFERROR(A2/B2,0)
+Returns 0 if the calculation produces an error.
+
+=IFNA(XLOOKUP(E2,A2:A10,B2:B10),"Not found")
+Returns a custom result if a lookup returns #N/A.
+
+=SWITCH(A2,1,"January",2,"February",3,"March","Other")
+Matches a value against a list of choices.
+
+4. CONDITIONAL COUNTING AND SUMMING
+-----------------------------------
+=COUNTIF(A2:A20,">=40")                 Counts values at least 40.
+=COUNTIF(B2:B20,"Ram")                  Counts cells equal to Ram.
+=COUNTIF(B2:B20,"*ram*")                Counts text containing ram.
+=COUNTIFS(A2:A20,">=40",C2:C20,"IT")    Counts rows meeting both criteria.
+=SUMIF(C2:C20,"Sales",D2:D20)           Adds amounts for Sales.
+=SUMIFS(D2:D20,C2:C20,"Sales",A2:A20,">=50")
+Adds amounts when both conditions are met.
+=AVERAGEIF(C2:C20,"IT",D2:D20)          Averages amounts for IT.
+=AVERAGEIFS(D2:D20,C2:C20,"IT",A2:A20,">=50")
+Averages values meeting multiple conditions.
+=MAXIFS(D2:D20,C2:C20,"Sales")          Maximum Sales amount.
+=MINIFS(D2:D20,C2:C20,"Sales")          Minimum Sales amount.
+
+Criteria examples:
+">50"       Greater than 50
+">=50"      Greater than or equal to 50
+"<50"       Less than 50
+"<>50"      Not equal to 50
+"Ram"       Exact text match
+"R*"        Text beginning with R
+"*a*"       Text containing a
+"?"         One character wildcard
+"~*"        A literal asterisk
+
+5. TEXT FORMULAS
+----------------
+=CONCAT(A2,B2)                 Joins text.
+=CONCAT(A2," ",B2)             Joins text with a space.
+=TEXTJOIN(", ",TRUE,A2:A10)    Joins a range using comma separators.
+=LEFT(A2,3)                    Returns the first 3 characters.
+=RIGHT(A2,4)                   Returns the last 4 characters.
+=MID(A2,2,5)                   Returns 5 characters starting at position 2.
+=LEN(A2)                       Counts characters.
+=TRIM(A2)                      Removes extra spaces between words and at ends.
+=CLEAN(A2)                     Removes many non-printing characters.
+=UPPER(A2)                     Converts text to uppercase.
+=LOWER(A2)                     Converts text to lowercase.
+=PROPER(A2)                    Capitalizes the first letter of each word.
+=SUBSTITUTE(A2,"old","new")    Replaces matching text.
+=REPLACE(A2,1,3,"ABC")         Replaces characters by position.
+=FIND("a",A2)                  Finds text; case-sensitive.
+=SEARCH("a",A2)                Finds text; not case-sensitive.
+=EXACT(A2,B2)                  Checks whether two text values match exactly.
+=TEXT(A2,"0.00")               Formats a number as text.
+=VALUE(A2)                     Converts number-like text to a number.
+=NUMBERVALUE(A2)               Converts text to a number using specified separators.
+=REPT("*",5)                   Repeats text 5 times.
+=CHAR(65)                      Returns the character for code 65.
+=CODE("A")                     Returns the character code.
+=TEXTBEFORE(A2,"-")            Returns text before a delimiter (Excel 365).
+=TEXTAFTER(A2,"-")             Returns text after a delimiter (Excel 365).
+=TEXTSPLIT(A2,",")             Splits text using a delimiter (Excel 365).
+
+6. DATE AND TIME FORMULAS
+-------------------------
+=TODAY()                       Current date.
+=NOW()                         Current date and time.
+=DATE(2026,11,28)              Creates a date.
+=TIME(14,30,0)                 Creates a time.
+=DAY(A2)                       Day of month.
+=MONTH(A2)                     Month number.
+=YEAR(A2)                      Year.
+=HOUR(A2)                      Hour.
+=MINUTE(A2)                    Minute.
+=SECOND(A2)                    Second.
+=WEEKDAY(A2,2)                 Monday=1 through Sunday=7.
+=WEEKNUM(A2,2)                 Week number, with Monday as first day.
+=ISOWEEKNUM(A2)                ISO week number.
+=EDATE(A2,3)                   Date 3 months later.
+=EOMONTH(A2,0)                 Last day of the same month.
+=WORKDAY(A2,10)                Date 10 working days later.
+=WORKDAY(A2,10,H2:H10)         Excludes listed holidays.
+=NETWORKDAYS(A2,B2)            Working days between two dates.
+=NETWORKDAYS(A2,B2,H2:H10)     Working days excluding holidays.
+=DAYS(B2,A2)                   Number of days between dates.
+=DATEDIF(A2,B2,"Y")            Completed years between dates.
+=DATEDIF(A2,B2,"M")            Completed months between dates.
+=DATEDIF(A2,B2,"D")            Days between dates.
+=YEARFRAC(A2,B2)               Fraction of a year between dates.
+=TEXT(A2,"dd-mmm-yyyy")        Displays a date in a chosen format.
+
+7. LOOKUP AND REFERENCE FORMULAS
+--------------------------------
+=XLOOKUP(E2,A2:A20,B2:B20,"Not found")
+Finds E2 in A2:A20 and returns the matching value from B2:B20.
+
+=VLOOKUP(E2,A2:D20,3,FALSE)
+Looks for E2 in the first column and returns the third column.
+FALSE requests an exact match.
+
+=HLOOKUP(B1,A1:F5,3,FALSE)
+Looks across the first row and returns a value from row 3.
+
+=INDEX(B2:D10,2,3)
+Returns the value at row 2, column 3 within the selected range.
+
+=MATCH(E2,A2:A20,0)
+Returns the position of an exact match.
+
+=XMATCH(E2,A2:A20)
+Modern match function; returns the matching position.
+
+=CHOOSE(2,"Red","Blue","Green")
+Returns the second option: Blue.
+
+=INDIRECT("A"&2)
+Builds a cell reference from text.
+
+=ADDRESS(2,3)
+Returns the address $C$2.
+
+=ROW(A5)                      Returns row number 5.
+=COLUMN(C5)                   Returns column number 3.
+=ROWS(A2:A10)                 Counts rows in a range.
+=COLUMNS(A2:D10)              Counts columns in a range.
+=OFFSET(A1,2,1)               Returns a reference 2 rows down and 1 column right.
+=TRANSPOSE(A1:C3)             Changes rows into columns and columns into rows.
+
+8. DYNAMIC ARRAY FORMULAS (EXCEL 365)
+-------------------------------------
+=FILTER(A2:D20,C2:C20="IT","No results")
+Returns rows where department is IT.
+
+=SORT(A2:D20,1,1)
+Sorts by the first column, ascending.
+
+=SORTBY(A2:D20,D2:D20,-1)
+Sorts rows by the values in column D, descending.
+
+=UNIQUE(C2:C20)
+Returns distinct department names.
+
+=SEQUENCE(10)
+Creates the numbers 1 to 10.
+
+=RANDARRAY(5,2,1,100,TRUE)
+Creates a 5-row, 2-column array of random integers from 1 to 100.
+
+=TAKE(A2:D20,5)
+Returns the first 5 rows.
+
+=DROP(A2:D20,2)
+Removes the first 2 rows from the returned array.
+
+=CHOOSECOLS(A2:D20,1,3)
+Returns columns 1 and 3.
+
+=CHOOSEROWS(A2:D20,1,3,5)
+Returns rows 1, 3 and 5.
+
+=VSTACK(A2:B5,D2:E5)
+Stacks arrays vertically.
+
+=HSTACK(A2:A5,C2:C5)
+Joins arrays horizontally.
+
+9. INFORMATION AND ERROR-CHECKING FORMULAS
+------------------------------------------
+=ISBLANK(A2)                   Checks whether a cell is empty.
+=ISNUMBER(A2)                  Checks whether a value is numeric.
+=ISTEXT(A2)                    Checks whether a value is text.
+=ISLOGICAL(A2)                 Checks whether a value is TRUE or FALSE.
+=ISERROR(A2)                   Checks for any error.
+=ISERR(A2)                     Checks for errors other than #N/A.
+=ISNA(A2)                      Checks for #N/A.
+=ISFORMULA(A2)                 Checks whether a cell contains a formula.
+=TYPE(A2)                      Returns a code describing the value type.
+=ERROR.TYPE(A2)                Returns a number identifying an error type.
+=NA()                          Returns the #N/A error.
+
+10. FINANCIAL FORMULAS
+----------------------
+=PMT(5%/12,60,-100000)
+Monthly payment for a 100,000 loan at 5% annual interest over 60 months.
+This is an illustrative calculation; check rate and payment-period assumptions.
+
+=FV(5%/12,60,-2000)
+Future value of regular payments.
+
+=PV(5%/12,60,-2000)
+Present value of regular payments.
+
+=RATE(60,-2000,100000)
+Interest rate per period for a loan/payment setup.
+
+=NPER(5%/12,-2000,100000)
+Number of payment periods.
+
+=NPV(10%,B2:B6)
+Net present value of future cash flows; initial investment is normally handled separately.
+
+=IRR(B2:B6)
+Internal rate of return for a series of cash flows.
+
+11. STATISTICAL FORMULAS
+------------------------
+=MEDIAN(A2:A20)                Middle value.
+=MODE.SNGL(A2:A20)             Most frequently occurring value.
+=STDEV.S(A2:A20)               Sample standard deviation.
+=STDEV.P(A2:A20)               Population standard deviation.
+=VAR.S(A2:A20)                 Sample variance.
+=VAR.P(A2:A20)                 Population variance.
+=RANK.EQ(A2,$A$2:$A$20,0)      Rank, largest value first.
+=PERCENTILE.INC(A2:A20,0.9)    90th percentile.
+=QUARTILE.INC(A2:A20,1)        First quartile.
+=LARGE(A2:A20,2)               Second-largest value.
+=SMALL(A2:A20,2)               Second-smallest value.
+=CORREL(A2:A20,B2:B20)         Correlation between two ranges.
+=COUNTUNIQUE(A2:A20)           Not a standard Excel function; use =COUNTA(UNIQUE(A2:A20)) in Excel 365.
+
+12. ROUNDING AND NUMBER FORMATTING
+----------------------------------
+=ROUND(A2,2)                   Two decimal places.
+=ROUND(A2,0)                   Nearest whole number.
+=CEILING.MATH(A2,5)            Rounds up to a multiple of 5.
+=FLOOR.MATH(A2,5)              Rounds down to a multiple of 5.
+=MROUND(A2,5)                  Rounds to the nearest multiple of 5.
+=EVEN(A2)                      Rounds away from zero to an even integer.
+=ODD(A2)                       Rounds away from zero to an odd integer.
+=SIGN(A2)                      Returns -1, 0 or 1.
+
+13. USEFUL BUSINESS AND OFFICE FORMULAS
+---------------------------------------
+Percentage:
+=B2/C2                         Percentage of total; format the cell as Percentage.
+=B2*(1+C2)                     Adds a percentage increase.
+=B2*(1-C2)                     Applies a percentage discount.
+
+Sales:
+=B2*C2                         Quantity multiplied by unit price.
+=B2*C2-D2                      Sales value minus cost.
+=IF(E2>=10000,"Target Achieved","Below Target")
+Checks a sales target.
+
+Attendance:
+=COUNTIF(B2:AF2,"P")            Counts present days.
+=COUNTIF(B2:AF2,"A")            Counts absent days.
+=COUNTIF(B2:AF2,"L")            Counts leave days.
+=COUNTIF(B2:AF2,"P")/COUNTA(B2:AF2)
+Attendance percentage; format as Percentage.
+
+Student marks:
+=SUM(B2:F2)                     Total marks.
+=AVERAGE(B2:F2)                 Average marks.
+=IF(G2>=40,"Pass","Fail")       Pass/fail based on total in G2.
+=RANK.EQ(G2,$G$2:$G$20,0)       Student rank.
+=IF(G2>=80,"A",IF(G2>=60,"B",IF(G2>=40,"C","Fail")))
+Simple grade example; adjust grade boundaries to your institution's rules.
+
+13.1. Remove duplicates / get distinct values
+---------------------------------------------
+For a distinct list in Excel 365:
+=UNIQUE(A2:A100)
+
+To count distinct nonblank values:
+=COUNTA(UNIQUE(FILTER(A2:A100,A2:A100<>"")))
+
+14. COMMON EXCEL ERRORS
+-----------------------
+#DIV/0!     A formula divides by zero or a blank cell.
+#N/A        A lookup cannot find a match or a value is unavailable.
+#NAME?      Excel does not recognize a function or name; check spelling and quotes.
+#NULL!      Incorrect range intersection operator or range reference.
+#NUM!       Invalid numeric calculation or argument.
+#REF!       A formula refers to a deleted or invalid cell.
+#VALUE!     Wrong type of argument, such as text where a number is required.
+#SPILL!     A dynamic array cannot spill because cells are blocked.
+#####       Column is too narrow or a date/time value is negative.
+
+Helpful error handling:
+=IFERROR(your_formula,"Check the data")
+=IFNA(your_lookup,"Not found")
+
+15. FORMULA SHORTCUTS AND GOOD PRACTICES
+----------------------------------------
+F2              Edit the active cell.
+Ctrl + `        Show or hide formulas.
+Alt + =         Insert AutoSum.
+Ctrl + 1        Open Format Cells.
+F4              Cycle through relative/absolute references while editing a formula.
+Ctrl + Shift + L Toggle filters.
+Ctrl + Arrow    Move to the edge of a data region.
+Ctrl + T        Convert a range into an Excel Table.
+
+Relative reference: A1
+Absolute reference: $A$1
+Mixed reference:   $A1 or A$1
+
+Example:
+=B2*$F$1
+When copied down, B2 changes to B3, B4, etc., while $F$1 remains fixed.
+
+GOOD PRACTICES
+--------------
+- Use Excel Tables (Ctrl+T) for growing datasets.
+- Give columns clear headings.
+- Avoid merged cells inside raw data tables.
+- Keep raw data separate from reports and dashboards.
+- Check dates and numbers are stored in the correct data type.
+- Use exact-match lookups when appropriate.
+- Use IFERROR carefully; do not hide errors that need investigation.
+- Test formulas with normal, blank, and unexpected values.
+- Use named ranges or structured references for complex workbooks.
+- Save a backup before making large changes.
+
+END OF FILE
+-----------
+This reference covers commonly used Excel formulas, not every function available.
+For function availability and exact syntax, check the Insert Function tool in Excel
+or Microsoft's official Excel function reference:
+https://support.microsoft.com/excel
